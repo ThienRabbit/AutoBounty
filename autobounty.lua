@@ -1,93 +1,119 @@
+repeat wait()
+until game:IsLoaded()
+local TableChat = {"."}
+spawn(function()
+    while wait() do 
+        pcall(function()
+            game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TableChat[math.random(1,#TableChat)],"All")
+            wait(45)
+        end)
+    end
+end)
 getgenv().Setting = {
-    ["Team"] = "Pirates", --[[Marines]]
+    ["Team"] = "Pirates", --Marines,Pirates
     ["Webhook"] = {
-        ["Url"] = "https://discord.com/api/webhooks/1192685280977748030/CMLd2d1EnUyIRHfi-8DZsWuHNfvq9d-6N-e6A7H--tZ9TxM8-5KP3hfCSKjZaUELe5iE", --[[ link webhook]]
-        ["Enabled"] = true, --[[ enable webhook]]
+        ["Enabled"] = true,
+        ["Url Webhook"] = "https://discord.com/api/webhooks/1192685280977748030/CMLd2d1EnUyIRHfi-8DZsWuHNfvq9d-6N-e6A7H--tZ9TxM8-5KP3hfCSKjZaUELe5iE", --Your Url
     },
-    ["BypassTP"] = {
-        ["Enable"] = true, --[[ bypass tp ]]
-        ["Attempt"] = 0, --[[ Tween If Failed After x Attempts (change to 0 for inf bypass tp even it fail)]]
-    },
-    ["FpsLock"] = {
-        ["Enable"] = true, --[[ lock fps]]
-        ["Cap"] = 30, --[[ fps to lock]]
-    },
-    ["LockBounty"] = {
-        ["Enable"] = true, --[[ lock bounty]]
-        ["Cap"] = 30000000, --[[ reach to this bounty do the action below]]
-        ["Action"] = "Kick", --[[ Kick, Shutdown]]
-        ["SendMessage"] = true, --[[ send message to webhook when reach the cap]]
-        ["Message"] = "Congratulation You Have Reached The Bounty Cap MyBounty" --[[ It Will Replace MyBounty With Your Current Bounty, Add Ping Everyone If You Want]]
+    ["Misc"] = {
+        ["AutoBuyRandomandStoreFruit"] = false,
+        ["AutoBuySurprise"] = false,
     },
     ["Click"] = {
-        ["Enable"] = true, --[[ click ]]
-        ["FastClick"] = true --[[ fast click]]
+        ["Enable"] = true,
+        ["Click Gun"] = true,
+        ["OnLowHealthDisable"] = true,
+        ["LowHealth"] = 4000,
     },
-    ["Haki Ken"] = {
-        ["Enable"] = true, --[[ Ken Haki ]]
+    ["SafeZone"] = {
+        ["Enable"] = true,
+        ["LowHealth"] = 3000,
+        ["MaxHealth"] = 5000,
+        ["Teleport Y"] = math.random(1000,2000)
     },
-    ["SpamSkill"] = true, --[[ Will use all skills as fast as possbile ignore holding skills]]
-    ["Weapons"] = { --[[ Select Weapon, Self Explain]]
+    ["Race V4"] = {
+        ["Enable"] = true,
+    },
+    ["Invisible"] = true,
+    ["White Screen"] = true,
+    ["GunMethod"] = false, --Support Only Melee And Gun,Not Invisible, Turn On Enabled Gun and Melee Please
+    ["SpamSkill"] = false, -- Will use all skills as fast as possbile ignore holding skills
+    ["Weapons"] = {
         ["Melee"] = {
-            ["Enable"] = true, --[[ enable using melee]]
-            ["Delay"] = 0,   --[[ time delay between the melee skill]] 
+            ["Enable"] = true,
+            ["Delay"] = 3,
             ["Skills"] = {
                 ["Z"] = {
-                    ["Enable"] = true, --[[ enable using skill Z]]
-                    ["HoldTime"] = 1,  --[[ hold skill in (seconds)]]
+                    ["Enable"] = true,
+                    ["HoldTime"] = 1.5,
                 },
-                ["X"] = {
-                    ["Enable"] = true, --[[ enable using skill X ]]
-                    ["HoldTime"] = 1,  --[[ hold skill in (seconds)]]
+               [ "X"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0,
                 },
 
                 ["C"] = {
-                    ["Enable"] = true, --[[ enable using skill C]]
-                    ["HoldTime"] = 1,  --[[ hold skill in (seconds)]]
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.2,
                 },
             },
         },
         ["Blox Fruit"] = {
-            ["Enable"] = true, --[[ enable using blox fruit]]
-            ["Delay"] = 0,  --[[ time delay between the blox fruit skill ]]
+            ["Enable"] = true,
+            ["Delay"] = 1,
             ["Skills"] = {
                 ["Z"] = {
-                    ["Enable"] = true, --[[ enable using skill Z]]
-                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0,
                 },
                 ["X"] = {
-                    ["Enable"] = true, --[[ enable using skill X]]
-                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.23,
                 },
 
                 ["C"] = {
-                    ["Enable"] = true, --[[ enable using skill C]]
-                    ["HoldTime"] = 1, --[[ hold skill in (seconds)]]
+                    ["Enable"] = false,
+                    ["HoldTime"] = 0.5,
                 },
                 ["V"] = {
-                    ["Enable"] = true, --[[ enable using skill V]]
-                    ["HoldTime"] = 3, --[[ hold skill in (seconds)]]
+                    ["Enable"] = false,
+                    ["HoldTime"] = 0.9,
                 },
                 ["F"] = {
-                    ["Enable"] = false, --[[ enable using skill F]]
-                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                    ["Enable"] = false,
+                    ["HoldTime"] = 0.5,
+                },
+            },
+        },
+        ["Gun"] = {
+            ["Enable"] = true,
+            ["Delay"] = 2,
+            ["Skills"] = {
+                ["Z"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.2,
+                },
+                ["X"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.001,
                 },
             },
         },
         ["Sword"] = {
-            ["Enable"] = false, --[[ enable using sword]]
-            ["Delay"] = 0, --[[ time delay between the sword skill ]]
+            ["Enable"] = true,
+            ["Delay"] = 1,
             ["Skills"] = {
                 ["Z"] = {
-                    ["Enable"] = true, --[[ enable using skill Z]]
-                    ["HoldTime"] = 1, --[[ hold skill in (seconds)]]
+                    ["Enable"] = true,
+                    ["HoldTime"] = 1.5,
                 },
                 ["X"] = {
-                    ["Enable"] = true, --[[[[enable using skill X]]
-                    ["HoldTime"] = 0, --[[ hold skill in (seconds)]]
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.3,
                 },
             },
         },
     }
 }
-loadstring(game:HttpGet(("https://raw.githubusercontent.com/Xero2409/XeroHub/main/bounty.lua")))()
+repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+loadstring(game:HttpGet("https://raw.githubusercontent.com/obiiyeuem/vthangsitink/main/BountyShit.lua"))()
