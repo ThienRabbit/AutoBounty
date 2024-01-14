@@ -16,23 +16,23 @@ getgenv().Setting = {
         ["Url Webhook"] = "https://discord.com/api/webhooks/1192685280977748030/CMLd2d1EnUyIRHfi-8DZsWuHNfvq9d-6N-e6A7H--tZ9TxM8-5KP3hfCSKjZaUELe5iE", --Your Url
     },
     ["Misc"] = {
-        ["AutoBuyRandomandStoreFruit"] = false,
+        ["AutoBuyRandomandStoreFruit"] = true,
         ["AutoBuySurprise"] = false,
     },
     ["Click"] = {
-        ["Enable"] = true,
-        ["Click Gun"] = true,
-        ["OnLowHealthDisable"] = true,
-        ["LowHealth"] = 4000,
+        ["Enable"] = false,
+        ["Click Gun"] = false,
+        ["OnLowHealthDisable"] = false,
+        ["LowHealth"] = 4500,
     },
     ["SafeZone"] = {
         ["Enable"] = true,
-        ["LowHealth"] = 3000,
+        ["LowHealth"] = 4500,
         ["MaxHealth"] = 5000,
         ["Teleport Y"] = math.random(1000,2000)
     },
     ["Race V4"] = {
-        ["Enable"] = true,
+        ["Enable"] = false,
     },
     ["Invisible"] = true,
     ["White Screen"] = true,
@@ -41,11 +41,11 @@ getgenv().Setting = {
     ["Weapons"] = {
         ["Melee"] = {
             ["Enable"] = true,
-            ["Delay"] = 3,
+            ["Delay"] = 2,
             ["Skills"] = {
                 ["Z"] = {
                     ["Enable"] = true,
-                    ["HoldTime"] = 1.5,
+                    ["HoldTime"] = 0,
                 },
                [ "X"] = {
                     ["Enable"] = true,
@@ -54,11 +54,38 @@ getgenv().Setting = {
 
                 ["C"] = {
                     ["Enable"] = true,
-                    ["HoldTime"] = 0.2,
+                    ["HoldTime"] = 1,
                 },
             },
         },
         ["Blox Fruit"] = {
+            ["Enable"] = true,
+            ["Delay"] = 2.5,
+            ["Skills"] = {
+                ["Z"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 2,
+                },
+                ["X"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.3,
+                },
+
+                ["C"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.3,
+                },
+                ["V"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0.3,
+                },
+                ["F"] = {
+                    ["Enable"] = true,
+                    ["HoldTime"] = 0,
+                },
+            },
+        },
+        ["Gun"] = {
             ["Enable"] = true,
             ["Delay"] = 1,
             ["Skills"] = {
@@ -68,34 +95,7 @@ getgenv().Setting = {
                 },
                 ["X"] = {
                     ["Enable"] = true,
-                    ["HoldTime"] = 0.23,
-                },
-
-                ["C"] = {
-                    ["Enable"] = false,
-                    ["HoldTime"] = 0.5,
-                },
-                ["V"] = {
-                    ["Enable"] = false,
-                    ["HoldTime"] = 0.9,
-                },
-                ["F"] = {
-                    ["Enable"] = false,
-                    ["HoldTime"] = 0.5,
-                },
-            },
-        },
-        ["Gun"] = {
-            ["Enable"] = true,
-            ["Delay"] = 2,
-            ["Skills"] = {
-                ["Z"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0.2,
-                },
-                ["X"] = {
-                    ["Enable"] = true,
-                    ["HoldTime"] = 0.001,
+                    ["HoldTime"] = 0,
                 },
             },
         },
@@ -105,11 +105,11 @@ getgenv().Setting = {
             ["Skills"] = {
                 ["Z"] = {
                     ["Enable"] = true,
-                    ["HoldTime"] = 1.5,
+                    ["HoldTime"] = 1,
                 },
                 ["X"] = {
                     ["Enable"] = true,
-                    ["HoldTime"] = 0.3,
+                    ["HoldTime"] = 0,
                 },
             },
         },
